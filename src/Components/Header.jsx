@@ -16,7 +16,7 @@ export default function Header() {
           <div className="profile-content">
             <h1>👋 it's</h1>
             <h1 className='name'>Amitanshu Sahu</h1>
-            <h2> Web Devloper</h2>
+            <h2 className='white'> Web Devloper</h2>
           </div>
           <div className="btn-holder">
             {/* <button className="explore">Expore</button> */}

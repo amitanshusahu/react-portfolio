@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import logo from "../assets/icons/icons8-c-programming-96.png"
+import logo from "../assets/icons/icons8-github-96.png"
 
 export function Nav(){
     return(
@@ -25,6 +25,7 @@ const StyledNav = styled.nav`
     display: flex;
     justify-content: space-between;
     width:99%;
+    height: 50px;
     position: sticky;
     top:0;
     background-color: #000000ba;
@@ -32,7 +33,6 @@ const StyledNav = styled.nav`
     .logoHolder{
         width:2rem;
         height:2rem;
-        padding: 10px;
         margin: 10px;
         img{
             width:2rem;
@@ -44,9 +44,10 @@ const StyledNav = styled.nav`
         padding:10px;
         margin: 10px;
         cursor: pointer;
-        /* transition: 1s; */
+        font-weight: bold;
         &:hover{
-            border-bottom: 2px solid yellow;
+            transition: 0.2s ease-in-out;
+            color: cyan;
         }
     }
 `

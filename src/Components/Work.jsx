@@ -1,44 +1,25 @@
 import React, {useState} from "react"
 import styled from "styled-components"
-import { BigCards } from "./BigCards"
+import { Cards } from "./Cards"
+import rightArrow from "../assets/icons/icons8-right-arrow-64.png"
 import Image1 from "../assets/banners/loopholetech.jpeg"
 import Image2 from "../assets/banners/amitanshusahu.jpeg"
 import Image3 from "../assets/banners/ganga.jpeg"
 import Image4 from "../assets/banners/studybuddy.jpeg"
-export function Work(){
-    // const imageList = [Image1 , Image2, Image3, Image4];
-    const imageList = [
-        {img : Image1},
-        {img : Image2},
-        {img : Image3},
-        {img : Image4}
-    ]
-    let arrLength = imageList.length;
-    const [current , setCurrent] = useState(0);
-    
-    // setInterval(() => {
-    //     setCurrent(current == arrLength ? 0 : current + 1)
-
-    // }, 2000);
-    
+export function Work(){    
     return(
         <StyledSection>
-            <h1>Recent Works</h1>
-            {
-                imageList.map((data, index)=>{
-                    return(
-                        <div className={index == current ? "slide-active" : "slide"}>
-                            <div className="card">
-                                <div className="cardImageHolder">
-                                    <img src={data.img} alt="" />
-                                </div>
-                            </div>
-                        </div>
-                    )
-                })
-            }
+            <h2>Recent Works</h2>
+            <div className="cards-holder">
+                <Cards img ={Image1}/>
+                <Cards img ={Image2}/>
+                <Cards img ={Image3}/>
+                <Cards img ={Image4}/>
+                <Cards img ={Image1}/>
+                <Cards img ={Image4}/>
+            </div>
             <div className="viewMore">
-                <a href="#">View more -</a>
+                <a className="link" href="">View More <img src={rightArrow} alt="" /></a>
             </div>
         </StyledSection>
         
@@ -46,43 +27,41 @@ export function Work(){
     }
 
 const StyledSection = styled.section`
-    height: fit-content;
-    background-color: black;
+    height: max-content;
     display: flex;
     justify-content: center;
     align-items: center;
-    h1{
+    flex-direction: column;
+    h2{
         margin: 30px;
-        margin-top: 70px;
-        font-size: 40px;
-        color: #a7a7a7;
+        margin-top: 50px;
     }
-    .card{
-        background-color: #1b1b1b;
-        border-radius: 10px;
+    .cards-holder{
         display: flex;
-        width: 70vw;
-        overflow: hidden;
-        .cardImageHolder{
-            img{
-                width : 40%;
-                height: 100%;
-            }
-    }
-    }
-    .slide{
-        margin: 30px;
-        display: none;
-    }
-    .slide-active{
-        margin: 30px;
-        display:black;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-grow: 1.5;
     }
     .viewMore{
         width: 95%;
         text-align: right;
+        margin: 30px;
         a{
-            padding: 30px;
+            color: #d5d5d5;
+            font-size: 20px;
+            text-decoration: none;
+            margin-right: 20px;
+            &:hover img{
+                transition: 0.3s ease-in-out;
+                padding-left: 15px;
+                margin-right: -15px;
+            }
+            img{
+                width: 40px;
+                height: 30px;
+                margin-bottom: -10px;
+            }
         }
     }
 `
